@@ -4,6 +4,7 @@ const populationElements = document.querySelectorAll('span.population');
 
 const populations = Array.from(populationElements)
   .map((element) => element.textContent.trim())
+  .map(text => text.replace(/,/g, ''))
   .filter((text) => !isNaN(text && text !== ''))
   .map((text) => Number(text));
 
